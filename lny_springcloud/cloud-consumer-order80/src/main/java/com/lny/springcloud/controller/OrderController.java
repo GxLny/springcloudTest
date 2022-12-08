@@ -18,7 +18,7 @@ public class OrderController {
 
 //    public static final String PAYMENT_URL = "http://localhost:8001";
     // 使用eureka注册中心的服务名称
-    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
+    public static final String PAYMENT_URL = "http://cloud-payment-server";
 
     @Resource
     private RestTemplate restTemplate;
