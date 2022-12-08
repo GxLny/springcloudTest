@@ -15,7 +15,6 @@ import javax.annotation.Resource;
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
-
     @Value("${server.port}")
     private String serverPort;
 
@@ -23,7 +22,7 @@ public class PaymentController {
     public CommonResult add(@RequestBody Payment payment){
         int i = paymentService.add(payment);
         if (i > 0) {
-            return new CommonResult(200,"插入成功，serverPost："+serverPort,i);
+            return new CommonResult(200,"插入成功，serverPort："+serverPort,i);
         }else{
             return new CommonResult(400,"插入失败！",null);
         }
@@ -33,7 +32,7 @@ public class PaymentController {
     public CommonResult queryById(@PathVariable("id") Long id){
         Payment payment = paymentService.queryById(id);
         if (payment != null) {
-            return new CommonResult(200,"查询成功，serverPost："+serverPort,payment);
+            return new CommonResult(200,"查询成功，serverPort："+serverPort,payment);
         }else{
             return new CommonResult(400,"查询失败！",null);
         }
