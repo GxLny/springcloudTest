@@ -5,6 +5,13 @@ spring:
   application:
     name: cloud-order-server
 
+ribbon:
+  #设置读取超时时间  默认一秒
+  ReadTimeout:  5000
+  #连接超时时间
+  ConnectTimeout: 5000
+
+
 eureka:
   client:
     #表示是否将自己注册进eurekaServer，默认为true
@@ -13,3 +20,8 @@ eureka:
     service-url:
       #defaultZone: http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #集群版
+
+#feign 日志
+logging:
+  level:
+    com.lny.springcloud.server.PaymentFeignService: debug

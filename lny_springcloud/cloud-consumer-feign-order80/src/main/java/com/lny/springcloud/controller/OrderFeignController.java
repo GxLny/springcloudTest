@@ -21,4 +21,14 @@ public class OrderFeignController {
     public CommonResult<Payment> queryById(@PathVariable("id") Long id){
         return paymentFeignService.queryById(id);
     }
+
+    /**
+     * 超时接口
+     * @return
+     */
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        return paymentFeignService.paymentFeignTimeout();
+    }
+
 }
