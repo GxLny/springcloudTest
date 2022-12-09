@@ -1,4 +1,4 @@
-package com.lny.springcloud.server;
+package com.lny.springcloud.service;
 
 import com.lny.springcloud.entities.Payment;
 import com.lny.springcloud.utils.CommonResult;

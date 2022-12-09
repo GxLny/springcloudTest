@@ -1,7 +1,7 @@
 package com.lny.springcloud.controller;
 
 import com.lny.springcloud.entities.Payment;
-import com.lny.springcloud.server.PaymentFeignService;
+import com.lny.springcloud.service.PaymentFeignService;
 import com.lny.springcloud.utils.CommonResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
