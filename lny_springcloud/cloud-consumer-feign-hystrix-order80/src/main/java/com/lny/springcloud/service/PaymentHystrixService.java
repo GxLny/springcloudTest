@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface PaymentHystrixService {
 
     @GetMapping("/payment/hystrix/ok/{id}")
-    public String paymentInfo_ok(@PathVariable Long id);
+    public String paymentInfo_ok(Long id);
 
 
     @GetMapping("/payment/hystrix/timeout/{id}")
-    public String paymentInfo_timeout(@PathVariable Long id);
+    public String paymentInfo_timeout(Long id);
 
 
 }

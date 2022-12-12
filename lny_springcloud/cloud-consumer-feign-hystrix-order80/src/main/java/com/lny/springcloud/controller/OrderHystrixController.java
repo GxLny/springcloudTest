@@ -19,14 +19,14 @@ public class OrderHystrixController {
 
 
     @GetMapping("/hystrix/ok/{id}")
-    public String paymentInfo_ok(@PathVariable Long id){
+    public String paymentInfo_ok(@PathVariable("id") Long id){
         String res = paymentHystrixService.paymentInfo_ok(id);
         log.info("paymentInfo_ok:::"+res);
         return res;
     }
 
     @GetMapping("/hystrix/timeout/{id}")
-    public String paymentInfo_timeout(@PathVariable Long id){
+    public String paymentInfo_timeout(@PathVariable("id") Long id){
         String res = paymentHystrixService.paymentInfo_timeout(id);
         log.info("paymentInfo_timeout:::"+res);
         return res;
