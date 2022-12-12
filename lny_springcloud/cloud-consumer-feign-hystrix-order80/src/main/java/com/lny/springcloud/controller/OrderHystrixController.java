@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 @RestController
 @Slf4j
 @RequestMapping("/consumer")
-@DefaultProperties(defaultFallback = "paymentGlobalFallbackMethod") //全局fallback方法
+//@DefaultProperties(defaultFallback = "paymentGlobalFallbackMethod") //全局fallback方法
 public class OrderHystrixController {
 
     @Resource
@@ -31,9 +31,9 @@ public class OrderHystrixController {
 
     @GetMapping("/hystrix/timeout/{id}")
 //    @HystrixCommand(fallbackMethod = "paymentTimeOutFallbackMethod",commandProperties = {@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "1500")})
-    @HystrixCommand  //如果不指定方法，默认选用全局方法
+//    @HystrixCommand  //如果不指定方法，默认选用全局方法
     public String paymentInfo_timeout(@PathVariable("id") Long id){
-        int age = 10/0;
+//        int age = 10/0;
         String res = paymentHystrixService.paymentInfo_timeout(id);
         log.info("paymentInfo_timeout:::"+res);
         return res;
@@ -49,7 +49,6 @@ public class OrderHystrixController {
      * @return
      */
     public String paymentGlobalFallbackMethod(){
-
         return "系统繁忙，请稍后再试！！";
     }
 
