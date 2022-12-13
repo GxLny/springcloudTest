@@ -35,4 +35,12 @@ public class PaymentController {
         return res;
     }
 
+    //===服务熔断
+    @GetMapping("/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id){
+        String result = paymentServer.paymentCircuitBreaker(id);
+        log.info("*******result:"+result);
+        return result;
+    }
+
 }
