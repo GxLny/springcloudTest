@@ -12,6 +12,12 @@
     <artifactId>cloudalibaba-sentinel-service8401</artifactId>
 
     <dependencies>
+<!--        sentinel持久化 保存在nacos上-->
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+        </dependency>
+<!--        通用模块-->
         <dependency>
             <groupId>cn.lny.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
